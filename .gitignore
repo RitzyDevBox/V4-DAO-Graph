@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Mac system files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Production build directory
+dist/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# IDE files
+.vscode/
+.idea/
+

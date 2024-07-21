@@ -1,0 +1,2385 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "authManagerAddress",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "ADMIN_ROLE",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "DEFAULT_ROLE",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "EMPTY_FEE_DETAILS",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" },
+      { "name": "feeAccountId", "type": "bytes32", "internalType": "bytes32" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "ID_SEED",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "MAX_CONCURRENT_TIMELOCKS_PER_ASSET",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "NATIVE_ADDRESS",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "_calculateOrderFee",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct FeeDetails",
+        "components": [
+          {
+            "name": "assetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "feeAccountId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "_organizationFeeOverride",
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "_organizationToDepositFees",
+    "inputs": [
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
+    ],
+    "outputs": [
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "flatRateFeeAssetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "withdrawAccount",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "_organizationToOrderFees",
+    "inputs": [
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
+    ],
+    "outputs": [
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "flatRateFeeAssetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "withdrawAccount",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "_organizationToWithdrawFees",
+    "inputs": [
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
+    ],
+    "outputs": [
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "flatRateFeeAssetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "withdrawAccount",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "addTimelock",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "releaseTime", "type": "uint256", "internalType": "uint256" },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "adminFeeOverride",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "authManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IOrganizationAuthorizationManager"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateDepositFee",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct FeeDetails",
+        "components": [
+          {
+            "name": "assetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "feeAccountId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateOrderFee",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct FeeDetails",
+        "components": [
+          {
+            "name": "assetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "feeAccountId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateWithdrawFee",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct FeeDetails",
+        "components": [
+          {
+            "name": "assetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "feeAccountId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "cancelOrder",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createOrder",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "order",
+        "type": "tuple",
+        "internalType": "struct Order",
+        "components": [
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
+          {
+            "name": "assetForSale",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "assetForSaleAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "assetToReceive",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "assetToReceiveAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "expirationTimeStamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "feeDetails",
+            "type": "tuple",
+            "internalType": "struct FeeDetails",
+            "components": [
+              {
+                "name": "assetKey",
+                "type": "tuple",
+                "internalType": "struct AssetKey",
+                "components": [
+                  {
+                    "name": "assetAddress",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "id",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
+                    "name": "assetType",
+                    "type": "uint8",
+                    "internalType": "enum AssetType"
+                  }
+                ]
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "feeAccountId",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "deposit",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "fillOrder",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" },
+      { "name": "orderFiller", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "freeTimelock",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getAccountId",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "outputs": [
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "getAvailableBalance",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getLockedBalance",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getOrder",
+    "inputs": [
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct Order",
+        "components": [
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
+          {
+            "name": "assetForSale",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "assetForSaleAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "assetToReceive",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "assetToReceiveAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "expirationTimeStamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "feeDetails",
+            "type": "tuple",
+            "internalType": "struct FeeDetails",
+            "components": [
+              {
+                "name": "assetKey",
+                "type": "tuple",
+                "internalType": "struct AssetKey",
+                "components": [
+                  {
+                    "name": "assetAddress",
+                    "type": "address",
+                    "internalType": "address"
+                  },
+                  {
+                    "name": "id",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                  },
+                  {
+                    "name": "assetType",
+                    "type": "uint8",
+                    "internalType": "enum AssetType"
+                  }
+                ]
+              },
+              {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "feeAccountId",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getTotalBalance",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      }
+    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getWithdrawInfo",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct WithdrawInfo",
+        "components": [
+          {
+            "name": "withdrawAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "minimumLockTime",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "withdrawAddressLastSet",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "onERC1155BatchReceived",
+    "inputs": [
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "onERC1155Received",
+    "inputs": [
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "onERC721Received",
+    "inputs": [
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "orders",
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
+      {
+        "name": "assetForSale",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "assetForSaleAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetToReceive",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "assetToReceiveAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "expirationTimeStamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeDetails",
+        "type": "tuple",
+        "internalType": "struct FeeDetails",
+        "components": [
+          {
+            "name": "assetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "feeAccountId",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setWithdrawInfo",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "withdrawAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "minimumLockTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "supportsInterface",
+    "inputs": [
+      { "name": "interfaceId", "type": "bytes4", "internalType": "bytes4" }
+    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
+      { "name": "newOwner", "type": "address", "internalType": "address" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDefaultDepositFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDefaultOrderFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDefaultWithdrawFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateDepositFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateOrderFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateWithdrawFee",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "withdraw",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "AccountTransfer",
+    "inputs": [
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "toAccountId",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "assetAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "AddTimelock",
+    "inputs": [
+      {
+        "name": "_sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "_amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "releaseTime",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "AdminFeeOverride",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "isEnabled",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Deposit",
+    "inputs": [
+      {
+        "name": "_sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "_amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DepositFeeUpdated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrderCanceled",
+    "inputs": [
+      {
+        "name": "orderId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrderFeeUpdated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrderFilled",
+    "inputs": [
+      {
+        "name": "orderId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "orderFiller",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "amountToSwap",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "amountSwapped",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrderPlaced",
+    "inputs": [
+      {
+        "name": "orderId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateConfiguration",
+    "inputs": [
+      {
+        "name": "_sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      {
+        "name": "oldWithdrawAddress",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "newWithdrawAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "locktime",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Withdraw",
+    "inputs": [
+      {
+        "name": "_sender",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "accountId",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "assetKey",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct AssetKey",
+        "components": [
+          {
+            "name": "assetAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "assetType",
+            "type": "uint8",
+            "internalType": "enum AssetType"
+          }
+        ]
+      },
+      {
+        "name": "withdrawAddress",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "WithdrawFeeUpdated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "feeConfig",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct FeeConfig",
+        "components": [
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
+          {
+            "name": "flatRateFeeAssetKey",
+            "type": "tuple",
+            "internalType": "struct AssetKey",
+            "components": [
+              {
+                "name": "assetAddress",
+                "type": "address",
+                "internalType": "address"
+              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
+              {
+                "name": "assetType",
+                "type": "uint8",
+                "internalType": "enum AssetType"
+              }
+            ]
+          },
+          {
+            "name": "withdrawAccount",
+            "type": "tuple",
+            "internalType": "struct OrganizationAccountIdentityKey",
+            "components": [
+              {
+                "name": "organizationId",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "relatedId",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "anonymous": false
+  },
+  { "type": "error", "name": "CannotBeTreasury", "inputs": [] },
+  { "type": "error", "name": "CannotCoverFees", "inputs": [] },
+  { "type": "error", "name": "ExceededMaxTimelocks", "inputs": [] },
+  { "type": "error", "name": "FundsNotReceived", "inputs": [] },
+  { "type": "error", "name": "InsufficientBalance", "inputs": [] },
+  { "type": "error", "name": "InvalidAmount", "inputs": [] },
+  { "type": "error", "name": "InvalidAssetType", "inputs": [] },
+  { "type": "error", "name": "NotOrderOwner", "inputs": [] },
+  {
+    "type": "error",
+    "name": "OrderExpired",
+    "inputs": [
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" },
+      { "name": "expiration", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OrganizationDataLockedUntil",
+    "inputs": [
+      { "name": "timestamp", "type": "uint256", "internalType": "uint256" }
+    ]
+  },
+  { "type": "error", "name": "TransferFailed", "inputs": [] },
+  { "type": "error", "name": "Unauthorized", "inputs": [] },
+  { "type": "error", "name": "WithdrawAddressLocked", "inputs": [] }
+]

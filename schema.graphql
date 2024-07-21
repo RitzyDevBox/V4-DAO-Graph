@@ -1,0 +1,172 @@
+type AccountTransfer @entity(immutable: true) {
+  id: Bytes!
+  accountId: Bytes! # bytes32
+  toAccountId: Bytes! # bytes32
+  assetKey_assetAddress: Bytes! # address
+  assetKey_id: BigInt! # uint256
+  assetKey_assetType: Int! # uint8
+  assetAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AddTimelock @entity(immutable: true) {
+  id: Bytes!
+  _sender: Bytes! # address
+  accountIdentityKey_organizationId: BigInt! # uint256
+  accountIdentityKey_relatedId: BigInt! # uint256
+  assetKey_assetAddress: Bytes! # address
+  assetKey_id: BigInt! # uint256
+  assetKey_assetType: Int! # uint8
+  _amount: BigInt! # uint256
+  releaseTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AdminFeeOverride @entity(immutable: true) {
+  id: Bytes!
+  organizationId: BigInt! # uint256
+  isEnabled: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Deposit @entity(immutable: true) {
+  id: Bytes!
+  _sender: Bytes! # address
+  accountId: Bytes! # bytes32
+  assetKey_assetAddress: Bytes! # address
+  assetKey_id: BigInt! # uint256
+  assetKey_assetType: Int! # uint8
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DepositFeeUpdated @entity(immutable: true) {
+  id: Bytes!
+  organizationId: BigInt! # uint256
+  feeConfig_isEnabled: Boolean! # bool
+  feeConfig_percentage: Int! # uint16
+  feeConfig_minFee: BigInt! # uint256
+  feeConfig_maxFee: BigInt! # uint256
+  feeConfig_useFlatRate: Boolean! # bool
+  feeConfig_flatRate: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetAddress: Bytes! # address
+  feeConfig_flatRateFeeAssetKey_id: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetType: Int! # uint8
+  feeConfig_withdrawAccount_organizationId: BigInt! # uint256
+  feeConfig_withdrawAccount_relatedId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderCanceled @entity(immutable: true) {
+  id: Bytes!
+  orderId: BigInt! # uint256
+  accountId: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderFeeUpdated @entity(immutable: true) {
+  id: Bytes!
+  organizationId: BigInt! # uint256
+  feeConfig_isEnabled: Boolean! # bool
+  feeConfig_percentage: Int! # uint16
+  feeConfig_minFee: BigInt! # uint256
+  feeConfig_maxFee: BigInt! # uint256
+  feeConfig_useFlatRate: Boolean! # bool
+  feeConfig_flatRate: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetAddress: Bytes! # address
+  feeConfig_flatRateFeeAssetKey_id: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetType: Int! # uint8
+  feeConfig_withdrawAccount_organizationId: BigInt! # uint256
+  feeConfig_withdrawAccount_relatedId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderFilled @entity(immutable: true) {
+  id: Bytes!
+  orderId: BigInt! # uint256
+  accountId: Bytes! # bytes32
+  orderFiller: Bytes! # address
+  amountToSwap: BigInt! # uint256
+  amountSwapped: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderPlaced @entity(immutable: true) {
+  id: Bytes!
+  orderId: BigInt! # uint256
+  accountId: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdateConfiguration @entity(immutable: true) {
+  id: Bytes!
+  _sender: Bytes! # address
+  accountIdentityKey_organizationId: BigInt! # uint256
+  accountIdentityKey_relatedId: BigInt! # uint256
+  oldWithdrawAddress: Bytes! # address
+  newWithdrawAddress: Bytes! # address
+  locktime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Withdraw @entity(immutable: true) {
+  id: Bytes!
+  _sender: Bytes! # address
+  accountId: Bytes! # bytes32
+  assetKey_assetAddress: Bytes! # address
+  assetKey_id: BigInt! # uint256
+  assetKey_assetType: Int! # uint8
+  withdrawAddress: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type WithdrawFeeUpdated @entity(immutable: true) {
+  id: Bytes!
+  organizationId: BigInt! # uint256
+  feeConfig_isEnabled: Boolean! # bool
+  feeConfig_percentage: Int! # uint16
+  feeConfig_minFee: BigInt! # uint256
+  feeConfig_maxFee: BigInt! # uint256
+  feeConfig_useFlatRate: Boolean! # bool
+  feeConfig_flatRate: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetAddress: Bytes! # address
+  feeConfig_flatRateFeeAssetKey_id: BigInt! # uint256
+  feeConfig_flatRateFeeAssetKey_assetType: Int! # uint8
+  feeConfig_withdrawAccount_organizationId: BigInt! # uint256
+  feeConfig_withdrawAccount_relatedId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

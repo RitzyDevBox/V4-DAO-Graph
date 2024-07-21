@@ -1,0 +1,60 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: AssetManager
+    network: holesky
+    source:
+      address: "0xf37d34c96388350121b0cB79BA40af4cB19A1B1a"
+      abi: AssetManager
+      startBlock: 1961645
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AccountTransfer
+        - AddTimelock
+        - AdminFeeOverride
+        - Deposit
+        - DepositFeeUpdated
+        - OrderCanceled
+        - OrderFeeUpdated
+        - OrderFilled
+        - OrderPlaced
+        - OwnershipTransferred
+        - UpdateConfiguration
+        - Withdraw
+        - WithdrawFeeUpdated
+      abis:
+        - name: AssetManager
+          file: ./abis/AssetManager.json
+      eventHandlers:
+        - event: AccountTransfer(bytes32,bytes32,(address,uint256,uint8),uint256)
+          handler: handleAccountTransfer
+        - event: AddTimelock(indexed address,(indexed uint256,uint256),(indexed address,uint256,uint8),uint256,uint256)
+          handler: handleAddTimelock
+        - event: AdminFeeOverride(indexed uint256,bool)
+          handler: handleAdminFeeOverride
+        - event: Deposit(indexed address,indexed bytes32,(indexed address,uint256,uint8),uint256)
+          handler: handleDeposit
+        - event: DepositFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
+          handler: handleDepositFeeUpdated
+        - event: OrderCanceled(indexed uint256,indexed bytes32)
+          handler: handleOrderCanceled
+        - event: OrderFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
+          handler: handleOrderFeeUpdated
+        - event: OrderFilled(indexed uint256,indexed bytes32,indexed address,uint256,uint256)
+          handler: handleOrderFilled
+        - event: OrderPlaced(indexed uint256,indexed bytes32)
+          handler: handleOrderPlaced
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: UpdateConfiguration(indexed address,(indexed uint256,uint256),address,indexed address,uint256)
+          handler: handleUpdateConfiguration
+        - event: Withdraw(indexed address,indexed bytes32,(indexed address,uint256,uint8),address,uint256)
+          handler: handleWithdraw
+        - event: WithdrawFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
+          handler: handleWithdrawFeeUpdated
+      file: ./src/asset-manager.ts
