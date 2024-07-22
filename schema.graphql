@@ -47,6 +47,7 @@ type Deposit @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
+
 type DepositFeeUpdated @entity(immutable: true) {
   id: Bytes!
   organizationId: BigInt! # uint256
@@ -110,6 +111,20 @@ type OrderFilled @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+}
+
+enum OrderStatus {
+  OPEN
+  CANCELED
+  EXPIRED
+  FILLED
+}
+
+type Order @entity {
+  id: ID!
+  orderId: BigInt!
+  status: OrderStatus!
+  expiration: BigInt!
 }
 
 type OrderPlaced @entity(immutable: true) {

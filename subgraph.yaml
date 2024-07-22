@@ -20,6 +20,7 @@ dataSources:
         - Deposit
         - DepositFeeUpdated
         - EIP712DomainChanged
+        - Order
         - OrderCanceled
         - OrderFeeUpdated
         - OrderFilled
