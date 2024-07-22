@@ -1,13 +1,13 @@
 {
-  "name": "v4-dao-graph",
+  "name": "",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ v4-dao-graph",
-    "create-local": "graph create --node http://localhost:8020/ v4-dao-graph",
-    "remove-local": "graph remove --node http://localhost:8020/ v4-dao-graph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 v4-dao-graph",
+    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ ",
+    "create-local": "graph create --node http://localhost:8020/ ",
+    "remove-local": "graph remove --node http://localhost:8020/ ",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 ",
     "test": "graph test"
   },
   "dependencies": {

@@ -1,8 +1,8 @@
 {
   "mainnet": {
-    "AssetManager": {
-      "address": "0xf37d34c96388350121b0cB79BA40af4cB19A1B1a",
-      "startBlock": 1961645
+    "assetManager": {
+      "address": "0x40Fe7d1bbca34b4375454EcF4fF5F4Ce29073df9",
+      "startBlock": 1981530
     }
   }
 }

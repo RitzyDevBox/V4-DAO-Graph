@@ -6,6 +6,7 @@ import {
   AdminFeeOverride,
   Deposit,
   DepositFeeUpdated,
+  EIP712DomainChanged,
   OrderCanceled,
   OrderFeeUpdated,
   OrderFilled,
@@ -14,7 +15,7 @@ import {
   UpdateConfiguration,
   Withdraw,
   WithdrawFeeUpdated
-} from "../generated/AssetManager/AssetManager"
+} from "../generated/assetManager/assetManager"
 
 export function createAccountTransferEvent(
   accountId: Bytes,
@@ -53,8 +54,10 @@ export function createAccountTransferEvent(
 
 export function createAddTimelockEvent(
   _sender: Address,
-  accountIdentityKey: ethereum.Tuple,
-  assetKey: ethereum.Tuple,
+  accountId: Bytes,
+  assetAddress: Address,
+  assetId: BigInt,
+  assetType: i32,
   _amount: BigInt,
   releaseTime: BigInt
 ): AddTimelock {
@@ -67,12 +70,27 @@ export function createAddTimelockEvent(
   )
   addTimelockEvent.parameters.push(
     new ethereum.EventParam(
-      "accountIdentityKey",
-      ethereum.Value.fromTuple(accountIdentityKey)
+      "accountId",
+      ethereum.Value.fromFixedBytes(accountId)
     )
   )
   addTimelockEvent.parameters.push(
-    new ethereum.EventParam("assetKey", ethereum.Value.fromTuple(assetKey))
+    new ethereum.EventParam(
+      "assetAddress",
+      ethereum.Value.fromAddress(assetAddress)
+    )
+  )
+  addTimelockEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetId",
+      ethereum.Value.fromUnsignedBigInt(assetId)
+    )
+  )
+  addTimelockEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetType",
+      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(assetType))
+    )
   )
   addTimelockEvent.parameters.push(
     new ethereum.EventParam(
@@ -114,7 +132,9 @@ export function createAdminFeeOverrideEvent(
 export function createDepositEvent(
   _sender: Address,
   accountId: Bytes,
-  assetKey: ethereum.Tuple,
+  assetAddress: Address,
+  assetId: BigInt,
+  assetType: i32,
   _amount: BigInt
 ): Deposit {
   let depositEvent = changetype<Deposit>(newMockEvent())
@@ -131,7 +151,22 @@ export function createDepositEvent(
     )
   )
   depositEvent.parameters.push(
-    new ethereum.EventParam("assetKey", ethereum.Value.fromTuple(assetKey))
+    new ethereum.EventParam(
+      "assetAddress",
+      ethereum.Value.fromAddress(assetAddress)
+    )
+  )
+  depositEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetId",
+      ethereum.Value.fromUnsignedBigInt(assetId)
+    )
+  )
+  depositEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetType",
+      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(assetType))
+    )
   )
   depositEvent.parameters.push(
     new ethereum.EventParam(
@@ -162,6 +197,14 @@ export function createDepositFeeUpdatedEvent(
   )
 
   return depositFeeUpdatedEvent
+}
+
+export function createEIP712DomainChangedEvent(): EIP712DomainChanged {
+  let eip712DomainChangedEvent = changetype<EIP712DomainChanged>(newMockEvent())
+
+  eip712DomainChangedEvent.parameters = new Array()
+
+  return eip712DomainChangedEvent
 }
 
 export function createOrderCanceledEvent(
@@ -212,9 +255,7 @@ export function createOrderFeeUpdatedEvent(
 export function createOrderFilledEvent(
   orderId: BigInt,
   accountId: Bytes,
-  orderFiller: Address,
-  amountToSwap: BigInt,
-  amountSwapped: BigInt
+  orderFiller: Address
 ): OrderFilled {
   let orderFilledEvent = changetype<OrderFilled>(newMockEvent())
 
@@ -236,18 +277,6 @@ export function createOrderFilledEvent(
     new ethereum.EventParam(
       "orderFiller",
       ethereum.Value.fromAddress(orderFiller)
-    )
-  )
-  orderFilledEvent.parameters.push(
-    new ethereum.EventParam(
-      "amountToSwap",
-      ethereum.Value.fromUnsignedBigInt(amountToSwap)
-    )
-  )
-  orderFilledEvent.parameters.push(
-    new ethereum.EventParam(
-      "amountSwapped",
-      ethereum.Value.fromUnsignedBigInt(amountSwapped)
     )
   )
 
@@ -303,7 +332,7 @@ export function createOwnershipTransferredEvent(
 
 export function createUpdateConfigurationEvent(
   _sender: Address,
-  accountIdentityKey: ethereum.Tuple,
+  accountId: Bytes,
   oldWithdrawAddress: Address,
   newWithdrawAddress: Address,
   locktime: BigInt
@@ -317,8 +346,8 @@ export function createUpdateConfigurationEvent(
   )
   updateConfigurationEvent.parameters.push(
     new ethereum.EventParam(
-      "accountIdentityKey",
-      ethereum.Value.fromTuple(accountIdentityKey)
+      "accountId",
+      ethereum.Value.fromFixedBytes(accountId)
     )
   )
   updateConfigurationEvent.parameters.push(
@@ -346,7 +375,9 @@ export function createUpdateConfigurationEvent(
 export function createWithdrawEvent(
   _sender: Address,
   accountId: Bytes,
-  assetKey: ethereum.Tuple,
+  assetAddress: Address,
+  assetId: BigInt,
+  assetType: i32,
   withdrawAddress: Address,
   amount: BigInt
 ): Withdraw {
@@ -364,7 +395,22 @@ export function createWithdrawEvent(
     )
   )
   withdrawEvent.parameters.push(
-    new ethereum.EventParam("assetKey", ethereum.Value.fromTuple(assetKey))
+    new ethereum.EventParam(
+      "assetAddress",
+      ethereum.Value.fromAddress(assetAddress)
+    )
+  )
+  withdrawEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetId",
+      ethereum.Value.fromUnsignedBigInt(assetId)
+    )
+  )
+  withdrawEvent.parameters.push(
+    new ethereum.EventParam(
+      "assetType",
+      ethereum.Value.fromUnsignedBigInt(BigInt.fromI32(assetType))
+    )
   )
   withdrawEvent.parameters.push(
     new ethereum.EventParam(

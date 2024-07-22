@@ -3,11 +3,11 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: AssetManager
-    network: holesky
+    name: assetManager
+    network: mainnet
     source:
       address: "0x40Fe7d1bbca34b4375454EcF4fF5F4Ce29073df9"
-      abi: AssetManager
+      abi: assetManager
       startBlock: 1981530
     mapping:
       kind: ethereum/events
@@ -19,6 +19,7 @@ dataSources:
         - AdminFeeOverride
         - Deposit
         - DepositFeeUpdated
+        - EIP712DomainChanged
         - OrderCanceled
         - OrderFeeUpdated
         - OrderFilled
@@ -28,32 +29,34 @@ dataSources:
         - Withdraw
         - WithdrawFeeUpdated
       abis:
-        - name: AssetManager
-          file: ./abis/AssetManager.json
+        - name: assetManager
+          file: ./abis/assetManager.json
       eventHandlers:
         - event: AccountTransfer(bytes32,bytes32,(address,uint256,uint8),uint256)
           handler: handleAccountTransfer
-        - event: AddTimelock(indexed address,(indexed uint256,uint256),(indexed address,uint256,uint8),uint256,uint256)
+        - event: AddTimelock(indexed address,indexed bytes32,address,uint256,uint8,uint256,uint256)
           handler: handleAddTimelock
         - event: AdminFeeOverride(indexed uint256,bool)
           handler: handleAdminFeeOverride
-        - event: Deposit(indexed address,indexed bytes32,(indexed address,uint256,uint8),uint256)
+        - event: Deposit(indexed address,indexed bytes32,address,uint256,uint8,uint256)
           handler: handleDeposit
         - event: DepositFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
           handler: handleDepositFeeUpdated
+        - event: EIP712DomainChanged()
+          handler: handleEIP712DomainChanged
         - event: OrderCanceled(indexed uint256,indexed bytes32)
           handler: handleOrderCanceled
         - event: OrderFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
           handler: handleOrderFeeUpdated
-        - event: OrderFilled(indexed uint256,indexed bytes32,indexed address,uint256,uint256)
+        - event: OrderFilled(indexed uint256,indexed bytes32,indexed address)
           handler: handleOrderFilled
         - event: OrderPlaced(indexed uint256,indexed bytes32)
           handler: handleOrderPlaced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-        - event: UpdateConfiguration(indexed address,(indexed uint256,uint256),address,indexed address,uint256)
+        - event: UpdateConfiguration(indexed address,indexed bytes32,address,indexed address,uint256)
           handler: handleUpdateConfiguration
-        - event: Withdraw(indexed address,indexed bytes32,(indexed address,uint256,uint8),address,uint256)
+        - event: Withdraw(indexed address,indexed bytes32,address,uint256,uint8,address,uint256)
           handler: handleWithdraw
         - event: WithdrawFeeUpdated(indexed uint256,(bool,uint16,uint256,uint256,bool,uint256,(address,uint256,uint8),(uint256,uint256)))
           handler: handleWithdrawFeeUpdated

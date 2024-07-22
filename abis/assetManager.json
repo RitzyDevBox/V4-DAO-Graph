@@ -14,26 +14,14 @@
     "type": "function",
     "name": "ADMIN_ROLE",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "DEFAULT_ROLE",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
     "stateMutability": "view"
   },
   {
@@ -51,11 +39,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -63,16 +47,8 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "feeAccountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" },
+      { "name": "feeAccountId", "type": "bytes32", "internalType": "bytes32" }
     ],
     "stateMutability": "view"
   },
@@ -80,65 +56,35 @@
     "type": "function",
     "name": "ID_SEED",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "MAX_CONCURRENT_TIMELOCKS_PER_ASSET",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "NATIVE_ADDRESS",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "ORDER_TYPEHASH",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "ORGANIZATION_ACCOUNT_IDENTITY_KEY_TYPEHASH",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
     "stateMutability": "view"
   },
   {
@@ -160,11 +106,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -172,11 +114,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [
       {
@@ -194,11 +132,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -206,11 +140,7 @@
               }
             ]
           },
-          {
-            "name": "amount",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
           {
             "name": "feeAccountId",
             "type": "bytes32",
@@ -224,68 +154,24 @@
   {
     "type": "function",
     "name": "_organizationFeeOverride",
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "_organizationToDepositFees",
     "inputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
     ],
     "outputs": [
-      {
-        "name": "isEnabled",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "percentage",
-        "type": "uint16",
-        "internalType": "uint16"
-      },
-      {
-        "name": "minFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "maxFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "useFlatRate",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "flatRate",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
       {
         "name": "flatRateFeeAssetKey",
         "type": "tuple",
@@ -296,11 +182,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -318,11 +200,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       }
     ],
@@ -332,48 +210,16 @@
     "type": "function",
     "name": "_organizationToOrderFees",
     "inputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
     ],
     "outputs": [
-      {
-        "name": "isEnabled",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "percentage",
-        "type": "uint16",
-        "internalType": "uint16"
-      },
-      {
-        "name": "minFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "maxFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "useFlatRate",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "flatRate",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
       {
         "name": "flatRateFeeAssetKey",
         "type": "tuple",
@@ -384,11 +230,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -406,11 +248,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       }
     ],
@@ -420,48 +258,16 @@
     "type": "function",
     "name": "_organizationToWithdrawFees",
     "inputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes32", "internalType": "bytes32" }
     ],
     "outputs": [
-      {
-        "name": "isEnabled",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "percentage",
-        "type": "uint16",
-        "internalType": "uint16"
-      },
-      {
-        "name": "minFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "maxFee",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "useFlatRate",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "flatRate",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+      { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+      { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+      { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+      { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
       {
         "name": "flatRateFeeAssetKey",
         "type": "tuple",
@@ -472,11 +278,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -494,11 +296,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       }
     ],
@@ -518,11 +316,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -535,11 +329,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -547,16 +337,8 @@
           }
         ]
       },
-      {
-        "name": "releaseTime",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "releaseTime", "type": "uint256", "internalType": "uint256" },
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -570,11 +352,7 @@
         "type": "uint256",
         "internalType": "uint256"
       },
-      {
-        "name": "isEnabled",
-        "type": "bool",
-        "internalType": "bool"
-      }
+      { "name": "isEnabled", "type": "bool", "internalType": "bool" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -611,11 +389,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -623,11 +397,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [
       {
@@ -645,11 +415,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -657,11 +423,7 @@
               }
             ]
           },
-          {
-            "name": "amount",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
           {
             "name": "feeAccountId",
             "type": "bytes32",
@@ -691,11 +453,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -703,11 +461,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [
       {
@@ -725,11 +479,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -737,11 +487,7 @@
               }
             ]
           },
-          {
-            "name": "amount",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
           {
             "name": "feeAccountId",
             "type": "bytes32",
@@ -771,11 +517,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -783,11 +525,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [
       {
@@ -805,11 +543,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -817,11 +551,7 @@
               }
             ]
           },
-          {
-            "name": "amount",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
           {
             "name": "feeAccountId",
             "type": "bytes32",
@@ -846,18 +576,10 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
-      {
-        "name": "orderId",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -876,11 +598,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -888,16 +606,8 @@
         "type": "tuple",
         "internalType": "struct Order",
         "components": [
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "accountId",
-            "type": "bytes32",
-            "internalType": "bytes32"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
           {
             "name": "assetForSale",
             "type": "tuple",
@@ -908,11 +618,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -935,11 +641,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -999,13 +701,7 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "nonpayable"
   },
   {
@@ -1022,11 +718,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1034,16 +726,8 @@
         "type": "tuple",
         "internalType": "struct Order",
         "components": [
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "accountId",
-            "type": "bytes32",
-            "internalType": "bytes32"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
           {
             "name": "assetForSale",
             "type": "tuple",
@@ -1054,11 +738,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -1081,11 +761,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -1144,34 +820,12 @@
           }
         ]
       },
-      {
-        "name": "deadline",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "v",
-        "type": "uint8",
-        "internalType": "uint8"
-      },
-      {
-        "name": "r",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
-      {
-        "name": "s",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "deadline", "type": "uint256", "internalType": "uint256" },
+      { "name": "v", "type": "uint8", "internalType": "uint8" },
+      { "name": "r", "type": "bytes32", "internalType": "bytes32" },
+      { "name": "s", "type": "bytes32", "internalType": "bytes32" }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "nonpayable"
   },
   {
@@ -1188,11 +842,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1205,11 +855,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1217,11 +863,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [],
     "stateMutability": "payable"
@@ -1230,13 +872,7 @@
     "type": "function",
     "name": "domainSeparatorV4",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
     "stateMutability": "view"
   },
   {
@@ -1244,41 +880,17 @@
     "name": "eip712Domain",
     "inputs": [],
     "outputs": [
-      {
-        "name": "fields",
-        "type": "bytes1",
-        "internalType": "bytes1"
-      },
-      {
-        "name": "name",
-        "type": "string",
-        "internalType": "string"
-      },
-      {
-        "name": "version",
-        "type": "string",
-        "internalType": "string"
-      },
-      {
-        "name": "chainId",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
+      { "name": "fields", "type": "bytes1", "internalType": "bytes1" },
+      { "name": "name", "type": "string", "internalType": "string" },
+      { "name": "version", "type": "string", "internalType": "string" },
+      { "name": "chainId", "type": "uint256", "internalType": "uint256" },
       {
         "name": "verifyingContract",
         "type": "address",
         "internalType": "address"
       },
-      {
-        "name": "salt",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
-      {
-        "name": "extensions",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      }
+      { "name": "salt", "type": "bytes32", "internalType": "bytes32" },
+      { "name": "extensions", "type": "uint256[]", "internalType": "uint256[]" }
     ],
     "stateMutability": "view"
   },
@@ -1296,23 +908,11 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
-      {
-        "name": "orderId",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "orderFiller",
-        "type": "address",
-        "internalType": "address"
-      }
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" },
+      { "name": "orderFiller", "type": "address", "internalType": "address" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -1331,11 +931,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1348,11 +944,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1378,20 +970,12 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       }
     ],
     "outputs": [
-      {
-        "name": "accountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      }
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" }
     ],
     "stateMutability": "pure"
   },
@@ -1409,11 +993,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1426,11 +1006,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1439,24 +1015,14 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "getAvailableBalanceByAccount",
     "inputs": [
-      {
-        "name": "accountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
       {
         "name": "assetKey",
         "type": "tuple",
@@ -1467,11 +1033,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1480,13 +1042,7 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
@@ -1503,11 +1059,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1520,11 +1072,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1533,24 +1081,14 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "getLockedBalanceByAccount",
     "inputs": [
-      {
-        "name": "accountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
       {
         "name": "assetKey",
         "type": "tuple",
@@ -1561,11 +1099,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1574,24 +1108,14 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "getOrder",
     "inputs": [
-      {
-        "name": "orderId",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [
       {
@@ -1599,16 +1123,8 @@
         "type": "tuple",
         "internalType": "struct Order",
         "components": [
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "accountId",
-            "type": "bytes32",
-            "internalType": "bytes32"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
+          { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
           {
             "name": "assetForSale",
             "type": "tuple",
@@ -1619,11 +1135,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -1646,11 +1158,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -1726,11 +1234,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -1743,11 +1247,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1756,24 +1256,14 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "getTotalBalanceByAccount",
     "inputs": [
-      {
-        "name": "accountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
       {
         "name": "assetKey",
         "type": "tuple",
@@ -1784,11 +1274,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -1797,13 +1283,7 @@
         ]
       }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
@@ -1820,11 +1300,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       }
     ],
@@ -1858,135 +1334,47 @@
     "type": "function",
     "name": "onERC1155BatchReceived",
     "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      },
-      {
-        "name": "",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      },
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "", "type": "uint256[]", "internalType": "uint256[]" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
     "stateMutability": "pure"
   },
   {
     "type": "function",
     "name": "onERC1155Received",
     "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
     "stateMutability": "pure"
   },
   {
     "type": "function",
     "name": "onERC721Received",
     "inputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "address", "internalType": "address" },
+      { "name": "", "type": "uint256", "internalType": "uint256" },
+      { "name": "", "type": "bytes", "internalType": "bytes" }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bytes4", "internalType": "bytes4" }],
     "stateMutability": "pure"
   },
   {
     "type": "function",
     "name": "orders",
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
     "outputs": [
-      {
-        "name": "id",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "accountId",
-        "type": "bytes32",
-        "internalType": "bytes32"
-      },
+      { "name": "id", "type": "uint256", "internalType": "uint256" },
+      { "name": "accountId", "type": "bytes32", "internalType": "bytes32" },
       {
         "name": "assetForSale",
         "type": "tuple",
@@ -1997,11 +1385,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2024,11 +1408,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2061,11 +1441,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2073,11 +1449,7 @@
               }
             ]
           },
-          {
-            "name": "amount",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "amount", "type": "uint256", "internalType": "uint256" },
           {
             "name": "feeAccountId",
             "type": "bytes32",
@@ -2092,13 +1464,7 @@
     "type": "function",
     "name": "owner",
     "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
     "stateMutability": "view"
   },
   {
@@ -2122,11 +1488,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2147,30 +1509,16 @@
     "type": "function",
     "name": "supportsInterface",
     "inputs": [
-      {
-        "name": "interfaceId",
-        "type": "bytes4",
-        "internalType": "bytes4"
-      }
+      { "name": "interfaceId", "type": "bytes4", "internalType": "bytes4" }
     ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
     "stateMutability": "view"
   },
   {
     "type": "function",
     "name": "transferOwnership",
     "inputs": [
-      {
-        "name": "newOwner",
-        "type": "address",
-        "internalType": "address"
-      }
+      { "name": "newOwner", "type": "address", "internalType": "address" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -2189,11 +1537,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2206,36 +1550,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2246,11 +1566,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2295,11 +1611,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2312,36 +1624,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2352,11 +1640,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2401,11 +1685,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2418,36 +1698,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2458,11 +1714,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2507,11 +1759,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2529,11 +1777,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2546,36 +1790,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2586,11 +1806,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2635,11 +1851,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2657,11 +1869,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2674,36 +1882,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2714,11 +1898,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2763,11 +1943,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2785,11 +1961,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2802,36 +1974,12 @@
         "type": "tuple",
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -2842,11 +1990,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -2891,11 +2035,7 @@
             "type": "uint256",
             "internalType": "uint256"
           },
-          {
-            "name": "relatedId",
-            "type": "uint256",
-            "internalType": "uint256"
-          }
+          { "name": "relatedId", "type": "uint256", "internalType": "uint256" }
         ]
       },
       {
@@ -2908,11 +2048,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -2920,11 +2056,7 @@
           }
         ]
       },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "amount", "type": "uint256", "internalType": "uint256" }
     ],
     "outputs": [],
     "stateMutability": "nonpayable"
@@ -2956,11 +2088,7 @@
             "type": "address",
             "internalType": "address"
           },
-          {
-            "name": "id",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "id", "type": "uint256", "internalType": "uint256" },
           {
             "name": "assetType",
             "type": "uint8",
@@ -3104,36 +2232,12 @@
         "indexed": false,
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -3144,11 +2248,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -3219,36 +2319,12 @@
         "indexed": false,
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -3259,11 +2335,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -3458,36 +2530,12 @@
         "indexed": false,
         "internalType": "struct FeeConfig",
         "components": [
-          {
-            "name": "isEnabled",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "percentage",
-            "type": "uint16",
-            "internalType": "uint16"
-          },
-          {
-            "name": "minFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "maxFee",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "useFlatRate",
-            "type": "bool",
-            "internalType": "bool"
-          },
-          {
-            "name": "flatRate",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
+          { "name": "isEnabled", "type": "bool", "internalType": "bool" },
+          { "name": "percentage", "type": "uint16", "internalType": "uint16" },
+          { "name": "minFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "maxFee", "type": "uint256", "internalType": "uint256" },
+          { "name": "useFlatRate", "type": "bool", "internalType": "bool" },
+          { "name": "flatRate", "type": "uint256", "internalType": "uint256" },
           {
             "name": "flatRateFeeAssetKey",
             "type": "tuple",
@@ -3498,11 +2546,7 @@
                 "type": "address",
                 "internalType": "address"
               },
-              {
-                "name": "id",
-                "type": "uint256",
-                "internalType": "uint256"
-              },
+              { "name": "id", "type": "uint256", "internalType": "uint256" },
               {
                 "name": "assetType",
                 "type": "uint8",
@@ -3532,102 +2576,36 @@
     ],
     "anonymous": false
   },
-  {
-    "type": "error",
-    "name": "CannotBeTreasury",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "CannotCoverFees",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "ExceededMaxTimelocks",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "FundsNotReceived",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "InsufficientBalance",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "InvalidAmount",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "InvalidAssetType",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "InvalidShortString",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "NotOrderOwner",
-    "inputs": []
-  },
+  { "type": "error", "name": "CannotBeTreasury", "inputs": [] },
+  { "type": "error", "name": "CannotCoverFees", "inputs": [] },
+  { "type": "error", "name": "ExceededMaxTimelocks", "inputs": [] },
+  { "type": "error", "name": "FundsNotReceived", "inputs": [] },
+  { "type": "error", "name": "InsufficientBalance", "inputs": [] },
+  { "type": "error", "name": "InvalidAmount", "inputs": [] },
+  { "type": "error", "name": "InvalidAssetType", "inputs": [] },
+  { "type": "error", "name": "InvalidShortString", "inputs": [] },
+  { "type": "error", "name": "NotOrderOwner", "inputs": [] },
   {
     "type": "error",
     "name": "OrderExpired",
     "inputs": [
-      {
-        "name": "orderId",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "expiration",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "orderId", "type": "uint256", "internalType": "uint256" },
+      { "name": "expiration", "type": "uint256", "internalType": "uint256" }
     ]
   },
   {
     "type": "error",
     "name": "OrganizationDataLockedUntil",
     "inputs": [
-      {
-        "name": "timestamp",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
+      { "name": "timestamp", "type": "uint256", "internalType": "uint256" }
     ]
   },
   {
     "type": "error",
     "name": "StringTooLong",
-    "inputs": [
-      {
-        "name": "str",
-        "type": "string",
-        "internalType": "string"
-      }
-    ]
+    "inputs": [{ "name": "str", "type": "string", "internalType": "string" }]
   },
-  {
-    "type": "error",
-    "name": "TransferFailed",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Unauthorized",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "WithdrawAddressLocked",
-    "inputs": []
-  }
+  { "type": "error", "name": "TransferFailed", "inputs": [] },
+  { "type": "error", "name": "Unauthorized", "inputs": [] },
+  { "type": "error", "name": "WithdrawAddressLocked", "inputs": [] }
 ]

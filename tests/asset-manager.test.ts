@@ -8,7 +8,7 @@ import {
 } from "matchstick-as/assembly/index"
 import { Bytes, BigInt, Address } from "@graphprotocol/graph-ts"
 import { AccountTransfer } from "../generated/schema"
-import { AccountTransfer as AccountTransferEvent } from "../generated/AssetManager/AssetManager"
+import { AccountTransfer as AccountTransferEvent } from "../generated/assetManager/assetManager"
 import { handleAccountTransfer } from "../src/asset-manager"
 import { createAccountTransferEvent } from "./asset-manager-utils"
 

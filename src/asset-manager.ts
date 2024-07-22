@@ -4,6 +4,7 @@ import {
   AdminFeeOverride as AdminFeeOverrideEvent,
   Deposit as DepositEvent,
   DepositFeeUpdated as DepositFeeUpdatedEvent,
+  EIP712DomainChanged as EIP712DomainChangedEvent,
   OrderCanceled as OrderCanceledEvent,
   OrderFeeUpdated as OrderFeeUpdatedEvent,
   OrderFilled as OrderFilledEvent,
@@ -12,13 +13,14 @@ import {
   UpdateConfiguration as UpdateConfigurationEvent,
   Withdraw as WithdrawEvent,
   WithdrawFeeUpdated as WithdrawFeeUpdatedEvent
-} from "../generated/AssetManager/AssetManager"
+} from "../generated/assetManager/assetManager"
 import {
   AccountTransfer,
   AddTimelock,
   AdminFeeOverride,
   Deposit,
   DepositFeeUpdated,
+  EIP712DomainChanged,
   OrderCanceled,
   OrderFeeUpdated,
   OrderFilled,
@@ -52,13 +54,10 @@ export function handleAddTimelock(event: AddTimelockEvent): void {
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity._sender = event.params._sender
-  entity.accountIdentityKey_organizationId =
-    event.params.accountIdentityKey.organizationId
-  entity.accountIdentityKey_relatedId =
-    event.params.accountIdentityKey.relatedId
-  entity.assetKey_assetAddress = event.params.assetKey.assetAddress
-  entity.assetKey_id = event.params.assetKey.id
-  entity.assetKey_assetType = event.params.assetKey.assetType
+  entity.accountId = event.params.accountId
+  entity.assetAddress = event.params.assetAddress
+  entity.assetId = event.params.assetId
+  entity.assetType = event.params.assetType
   entity._amount = event.params._amount
   entity.releaseTime = event.params.releaseTime
 
@@ -89,9 +88,9 @@ export function handleDeposit(event: DepositEvent): void {
   )
   entity._sender = event.params._sender
   entity.accountId = event.params.accountId
-  entity.assetKey_assetAddress = event.params.assetKey.assetAddress
-  entity.assetKey_id = event.params.assetKey.id
-  entity.assetKey_assetType = event.params.assetKey.assetType
+  entity.assetAddress = event.params.assetAddress
+  entity.assetId = event.params.assetId
+  entity.assetType = event.params.assetType
   entity._amount = event.params._amount
 
   entity.blockNumber = event.block.number
@@ -122,6 +121,20 @@ export function handleDepositFeeUpdated(event: DepositFeeUpdatedEvent): void {
     event.params.feeConfig.withdrawAccount.organizationId
   entity.feeConfig_withdrawAccount_relatedId =
     event.params.feeConfig.withdrawAccount.relatedId
+
+  entity.blockNumber = event.block.number
+  entity.blockTimestamp = event.block.timestamp
+  entity.transactionHash = event.transaction.hash
+
+  entity.save()
+}
+
+export function handleEIP712DomainChanged(
+  event: EIP712DomainChangedEvent
+): void {
+  let entity = new EIP712DomainChanged(
+    event.transaction.hash.concatI32(event.logIndex.toI32())
+  )
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
@@ -180,8 +193,6 @@ export function handleOrderFilled(event: OrderFilledEvent): void {
   entity.orderId = event.params.orderId
   entity.accountId = event.params.accountId
   entity.orderFiller = event.params.orderFiller
-  entity.amountToSwap = event.params.amountToSwap
-  entity.amountSwapped = event.params.amountSwapped
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
@@ -227,10 +238,7 @@ export function handleUpdateConfiguration(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity._sender = event.params._sender
-  entity.accountIdentityKey_organizationId =
-    event.params.accountIdentityKey.organizationId
-  entity.accountIdentityKey_relatedId =
-    event.params.accountIdentityKey.relatedId
+  entity.accountId = event.params.accountId
   entity.oldWithdrawAddress = event.params.oldWithdrawAddress
   entity.newWithdrawAddress = event.params.newWithdrawAddress
   entity.locktime = event.params.locktime
@@ -248,9 +256,9 @@ export function handleWithdraw(event: WithdrawEvent): void {
   )
   entity._sender = event.params._sender
   entity.accountId = event.params.accountId
-  entity.assetKey_assetAddress = event.params.assetKey.assetAddress
-  entity.assetKey_id = event.params.assetKey.id
-  entity.assetKey_assetType = event.params.assetKey.assetType
+  entity.assetAddress = event.params.assetAddress
+  entity.assetId = event.params.assetId
+  entity.assetType = event.params.assetType
   entity.withdrawAddress = event.params.withdrawAddress
   entity.amount = event.params.amount
 
