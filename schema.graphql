@@ -75,15 +75,6 @@ type EIP712DomainChanged @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type OrderCanceled @entity(immutable: true) {
-  id: Bytes!
-  orderId: BigInt! # uint256
-  accountId: Bytes! # bytes32
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
 type OrderFeeUpdated @entity(immutable: true) {
   id: Bytes!
   organizationId: BigInt! # uint256
@@ -103,16 +94,6 @@ type OrderFeeUpdated @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type OrderFilled @entity(immutable: true) {
-  id: Bytes!
-  orderId: BigInt! # uint256
-  accountId: Bytes! # bytes32
-  orderFiller: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
-
 enum OrderStatus {
   OPEN
   CANCELED
@@ -123,17 +104,12 @@ enum OrderStatus {
 type Order @entity {
   id: ID!
   orderId: BigInt!
+  accountId: Bytes! # bytes32
   status: OrderStatus!
   expiration: BigInt!
-}
-
-type OrderPlaced @entity(immutable: true) {
-  id: Bytes!
-  orderId: BigInt! # uint256
-  accountId: Bytes! # bytes32
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
+  orderFiller: Bytes # address
+  createdTransactionHash: Bytes!
+  cancelOrFilledTransactionHash: Bytes
 }
 
 type OwnershipTransferred @entity(immutable: true) {

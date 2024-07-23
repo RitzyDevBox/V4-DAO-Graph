@@ -21,10 +21,8 @@ import {
   Deposit,
   DepositFeeUpdated,
   EIP712DomainChanged,
-  OrderCanceled,
+  Order,
   OrderFeeUpdated,
-  OrderFilled,
-  OrderPlaced,
   OwnershipTransferred,
   UpdateConfiguration,
   Withdraw,
@@ -143,20 +141,6 @@ export function handleEIP712DomainChanged(
   entity.save()
 }
 
-export function handleOrderCanceled(event: OrderCanceledEvent): void {
-  let entity = new OrderCanceled(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
-  entity.orderId = event.params.orderId
-  entity.accountId = event.params.accountId
-
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
-  entity.transactionHash = event.transaction.hash
-
-  entity.save()
-}
-
 export function handleOrderFeeUpdated(event: OrderFeeUpdatedEvent): void {
   let entity = new OrderFeeUpdated(
     event.transaction.hash.concatI32(event.logIndex.toI32())
@@ -187,32 +171,48 @@ export function handleOrderFeeUpdated(event: OrderFeeUpdatedEvent): void {
 }
 
 export function handleOrderFilled(event: OrderFilledEvent): void {
-  let entity = new OrderFilled(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
-  entity.orderId = event.params.orderId
-  entity.accountId = event.params.accountId
-  entity.orderFiller = event.params.orderFiller
 
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
-  entity.transactionHash = event.transaction.hash
+  let order = Order.load(event.params.orderId.toHex());
 
-  entity.save()
+  if (!order) {
+    order = new Order(event.params.orderId.toHex());
+    order.orderId = event.params.orderId;
+    order.accountId = event.params.accountId;
+  }
+  
+  order.status = "FILLED";
+  order.orderFiller = event.params.orderFiller;
+  order.cancelOrFilledTransactionHash = event.transaction.hash;
+  order.save();
+
 }
 
 export function handleOrderPlaced(event: OrderPlacedEvent): void {
-  let entity = new OrderPlaced(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
-  entity.orderId = event.params.orderId
-  entity.accountId = event.params.accountId
+  let order = new Order(event.params.orderId.toHex());
+  order.orderId = event.params.orderId;
+  order.accountId = event.params.accountId;
+  order.status = "OPEN";
+  order.createdTransactionHash = event.transaction.hash;
 
-  entity.blockNumber = event.block.number
-  entity.blockTimestamp = event.block.timestamp
-  entity.transactionHash = event.transaction.hash
+  //TODO: Regenerate and get
+  // order.expiration = event.block.timestamp.plus(BigInt.fromI32(3600));
 
-  entity.save()
+  order.save();
+}
+
+export function handleOrderCanceled(event: OrderCanceledEvent): void {
+  let order = Order.load(event.params.orderId.toHex());
+  
+  //TODO: verify whether this is really needed, the graph should verify that all entities are created so ideally this should already be created
+  if (!order) {
+    order = new Order(event.params.orderId.toHex());
+    order.orderId = event.params.orderId;
+    order.accountId = event.params.accountId
+  }
+
+  order.cancelOrFilledTransactionHash = event.transaction.hash;
+  order.status = "CANCELED";
+  order.save();
 }
 
 export function handleOwnershipTransferred(
