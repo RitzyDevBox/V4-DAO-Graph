@@ -1,8 +1,12 @@
 {
   "mainnet": {
     "assetManager": {
-      "address": "0x40Fe7d1bbca34b4375454EcF4fF5F4Ce29073df9",
-      "startBlock": 1981530
+      "address": "0xb8a3F1aE67bC7b30D95Bf8f175903A164193Db84",
+      "startBlock": 4005684
+    },
+    "organizationAccountManager": {
+      "address": "0xA748EA8BA8Ef61eF644ac37E621dc63DE895f333",
+      "startBlock": 4005684
     }
   }
 }

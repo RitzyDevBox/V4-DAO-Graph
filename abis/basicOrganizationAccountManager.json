@@ -1,0 +1,655 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "defaultAdmin",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "ADMIN_ROLE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "DEFAULT_ROLE",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "ORGANIZATION_ID_SEED",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "createAccount",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "relatedId",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "role",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "createOrganization",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "authenticationType",
+        "type": "uint8",
+        "internalType": "enum AuthenticationType"
+      },
+      {
+        "name": "contractAuthorizers",
+        "type": "tuple[]",
+        "internalType": "struct ContractAuthorizer[]",
+        "components": [
+          {
+            "name": "contractToAuthorize",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "authorizationManager",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getAccountOptions",
+    "inputs": [
+      {
+        "name": "accountHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct AccountOptions",
+        "components": [
+          {
+            "name": "isActive",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "role",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          },
+          {
+            "name": "options",
+            "type": "bytes",
+            "internalType": "bytes"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getAuthorityScope",
+    "inputs": [
+      {
+        "name": "authorityScope",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "getOrganization",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct OrganizationInfo",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "authenticationType",
+            "type": "uint8",
+            "internalType": "enum AuthenticationType"
+          },
+          {
+            "name": "organizationOwner",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "optionalParams",
+            "type": "bytes",
+            "internalType": "bytes"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isAuthenticated",
+    "inputs": [
+      {
+        "name": "accountIdentity",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "relatedId",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "originalSender",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isAuthorized",
+    "inputs": [
+      {
+        "name": "accountIdentityKey",
+        "type": "tuple",
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "relatedId",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "authContext",
+        "type": "tuple",
+        "internalType": "struct AuthContext",
+        "components": [
+          {
+            "name": "msgSender",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "msgValue",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "msgData",
+            "type": "bytes",
+            "internalType": "bytes"
+          },
+          {
+            "name": "selector",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          },
+          {
+            "name": "selectorContractAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "requiredRole",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          },
+          {
+            "name": "allowAnonymous",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setBypassAuthentication",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "selectorContractAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "selector",
+        "type": "bytes4",
+        "internalType": "bytes4"
+      },
+      {
+        "name": "isBypass",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "updateOrganization",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "contractAuthorizers",
+        "type": "tuple[]",
+        "internalType": "struct ContractAuthorizer[]",
+        "components": [
+          {
+            "name": "contractToAuthorize",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "authorizationManager",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "userBasedOrganizationId",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "AccountCreated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "relatedId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrganizationCreated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "authenticationType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum AuthenticationType"
+      },
+      {
+        "name": "contractAuthorizers",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ContractAuthorizer[]",
+        "components": [
+          {
+            "name": "contractToAuthorize",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "authorizationManager",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OrganizationUpdated",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "owner",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "contractAuthorizers",
+        "type": "tuple[]",
+        "indexed": false,
+        "internalType": "struct ContractAuthorizer[]",
+        "components": [
+          {
+            "name": "contractToAuthorize",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "authorizationManager",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      },
+      {
+        "name": "optionalParams",
+        "type": "bytes",
+        "indexed": false,
+        "internalType": "bytes"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "SetOrganizationContractMethodAuthenticationBypass",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "dependenctContract",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "sig",
+        "type": "bytes4",
+        "indexed": false,
+        "internalType": "bytes4"
+      },
+      {
+        "name": "isBypass",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdateIsAdmin",
+    "inputs": [
+      {
+        "name": "oldAccountIdentity",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "relatedId",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "newAccountIdentity",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct OrganizationAccountIdentityKey",
+        "components": [
+          {
+            "name": "organizationId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "relatedId",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "isAdmin",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "UpdatedOrganizationAuthority",
+    "inputs": [
+      {
+        "name": "organizationId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "newAuthority",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "DoesNotSupportAdministration",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Forbidden",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotOrganizationOwner",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "OnlyOwnerOrAdmin",
+    "inputs": []
+  }
+]
